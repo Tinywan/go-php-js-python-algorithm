@@ -15,7 +15,6 @@ function bubbleSort($arr)
     for ($i = 0; $i < $count; $i++) {
         //该层循环用来控制每轮 冒出一个数 需要比较的次数
         for ($j = 0; $j < $count - 1 - $i; $j++) {
-            echo $j.": ".json_encode($arr)."\r\n";
             if ($arr[$j] > $arr[$j + 1]) {
                 $tmp = $arr[$j];
                 $arr[$j] = $arr[$j + 1];
@@ -27,7 +26,7 @@ function bubbleSort($arr)
 }
 
 $arr = [6, 3, 8, 2, 9, 1];
-var_dump(bubbleSort($arr));
+print_r(bubbleSort($arr));
 ```
 
 ## JavaScript 代码实现
@@ -35,7 +34,7 @@ var_dump(bubbleSort($arr));
 ```js
 function bubbleSort(arr) {
     var len = arr.length;
-    for (var i = 0; i < len - 1; i++) {
+    for (var i = 0; i < len; i++) {
         for (var j = 0; j < len - 1 - i; j++) {
             if (arr[j] > arr[j+1]) {        // 相邻元素两两对比
                 var temp = arr[j+1];        // 元素交换
@@ -82,6 +81,6 @@ func bubbleSort(arr []int) []int {
 
 func main() {
 	arr := []int{1, 3, 9, 5, 66, 4}
-	fmt.Printf("%+v", bubbleSort(arr)) // 
+	fmt.Printf("%+v", bubbleSort(arr)) // [1 3 4 5 9 66]
 }
 ```
